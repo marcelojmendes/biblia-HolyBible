@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+<head>
+
+    <title>Testando Apps</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="build/icons.css" />
+
+    <link rel="stylesheet" type="text/css" href="build/af.ui.css" />
+
+     <script type="text/javascript" charset="utf-8" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://rawgit.com/ftlabs/fastclick/master/lib/fastclick.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.shim.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.ui.js"></script>
+
+
+    <script src="src/af.desktopBrowsers.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.actionsheet.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.animation.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.touchEvents.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.popup.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.drawer.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.toast.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.animateheader.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.splashscreen.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/af.swipereveal.js"></script>
+
+    <script src="json/aa.json"></script>    
+      
+
+    <script>
+    $.afui.useOSThemes=false;
+    $.afui.loadDefaultHash=true;
+    $.afui.autoLaunch=false;
+
+    //check search
+    var search=document.location.search.toLowerCase().replace("?","");
+    if(search.length>0)
+    {
+
+       $.afui.useOSThemes=true;
+        if(search=="win8")
+            $.os.ie=true;
+        else if(search=="firefox")
+            $.os.fennec="true"
+        $.afui.ready(function(){
+            $(document.body).get(0).className=(search);
+        });
+    }
+
+    $(document).ready(function(){
+        $.afui.launch();
+    });
+
+    //if($.os.ios)
+        $.afui.animateHeader(true);
+
+    </script>
+</head>
+
+<body >
+    <div id="splashscreen" class='ui-loader heavy'>
+                App Framework
+                <br>
+                <br>
+                <span class='ui-icon ui-icon-loading spin'></span>
+                <h1>Starting app</h1>
+
+            </div>
+    <div class="view" id="mainview">
+        <header>
+            <h1>What</h1>
+        </header>
+        <div class="pages">
+            <div data-left-drawer="left" class="panel" id="main" data-title="Bíblia Sagrada" data-selected="true">
+          <font color="blue"
+                <p id='ain_info'> <h1> Seja Bem Vindo </h1>
+               
+                                          </p> </font>
+                    <ul class="list">
+                        <li>
+                            <a href="#afuidemo/foo/bar/something" class="icon bible">Bíblia</a>
+                        </li>
+                        <li>
+                            <a href="#pesquisar" >Pesquisar</a>
+                        </li>
+                        <li>
+                            <a href="#configurar">Configurações</a>
+                        </li>
+                         <li>
+                            <a href="#desenvolvedor" >Desenvolvedor</a>
+                        </li>
+                        <li>
+                            <a href="#agradecimentos" >Agradecimentos</a>
+                        </li>
+                           
+               </ul>
+            </div>
+    
+      
+             <div data-left-drawer="left" class="panel" id="plugins" data-title="Temas" >
+
+                <ul class="list">
+                <!---    <li><a href="#index.html" data-transition="up-reveal">Padrão</a></li>
+                   <li><a href="index.html" >tenta esse</a></li>
+                    <li><a href="index.html ios7" >Apple ios</a></li>
+                    <li><a href="index.html?android" >Android</a></li>
+                    <li><a href="index.html?win8" >windows8</a></li>
+                    <li><a href="index.html?firefox" >M.Firefox</a></li>
+                    -->
+                </ul>
+            </div>
+    
+    
+     
+     <div data-left-drawer="left" class="panel" id="voice" data-title="GetVoice" >
+
+         <br>
+         <div style="text-align:center;width15%;color:blue;font-style:italic;font-size:20px">                              Pesquisar</div>
+                    
+         <input type="text" x-webkit-speech lang="pt-BR">
+        
+            </div>
+    
+    
+    <div data-left-drawer="left" class="panel" id="pesquisar" data-title="Pesquisa">
+        <br>
+    <input type="text" x-webkit-speech>
+    
+        </div>
+    
+    
+    <div data-left-drawer="left" class="panel" id="configurar" data-title="Configurações">
+        <ul class="list">
+        
+        <li> <a href="">Configurar</a></li>
+        </ul>
+    
+         </div>
+    
+    <div data-left-drawer="left" class="panel" id="desenvolvedor" data-title="Desenvolvedor">
+        <ul class="list">
+        
+        <li> <a href="">Em fase Beta!!!</a></li>
+        </ul>
+    
+    <img src="marcelo.JPG" width="150" height="150">    
+    </div>
+    
+    
+    <div data-left-drawer="left" class="panel" id="agradecimentos" data-title="Agradecimentos">
+        
+        <p> Ao Nosso Deus toda Honra!!!</p>
+        <ul class="list">
+        
+        <li> <a href="">P</a></li>
+        </ul>
+            
+         </div>
+    
+        <div title=" Livros" id="afuidemo" class="panel"  data-tab="navbar_ui">
+                        <h2 class='expanded' >Antingo Test</h2>
+                    <p id='AFUI_info'>App Framework UI is the User Interface/User Experience library for mobile applications. It uses HTML5 and CSS3 for animations and transitions. We built the kitchen sink using App Framework UI. It is comprised of components from the Plugins library
+                        and additional features.
+                        <br>* Fixed navigation bar
+                        <br>* Auto scrolling content panels
+                        <br>* Optional footer to segment your application
+                        <br>
+                    </p>
+                    <ul class="list">
+                        <li>
+                            <a href="#aftransitions">Gênesis</a>
+                        </li>
+                        <li>
+                            <a href="#aftransitions">Êxodo</a>
+                        </li>
+                        <li>
+                            <a href="#afgrid">Levítico</a>
+                        </li>
+                         <li>
+                       
+                    </ul>
+                </div>
+               
+
+                <div title="Capítulos" id="aftransitions" class="panel" data-footer='footerui'>
+                        <h2 class='expanded' onclick='showHide(this,"AFUI_transitions");'></h2>
+                    <p id='AFUI_transitions'>   <strong>af.ui transitions</strong> the following are transitions built in. You can easily add/extend with your own. Set the data-transition attribute on an anchor to change the transition.</p>
+                    <ul class="list">
+                        <li>
+                            <a href="#transition1" data-transition="slide">1</a>
+                        </li>
+                             
+                        <li>
+                            <a href="#uibuttons" data-transition="slide">2</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#transition1" data-transition="slide">3</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#transition1" data-transition="slide">4</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#transition1" data-transition="slide">5</a>
+                        </li>
+                        
+                        <li>
+                           
+                    </ul>
+                    <br/>
+                    <br/>
+                </div>
+    
+                
+                <div id="uibuttons" title=" Êxodo" class="panel" >
+                 <font face="Arial"> <center>  <b>O nascimento de Moisés</b> <br> </center>
+                     1 E foi um homem da casa de Levi e casou com uma filha
+                       de Levi. <br>
+                    
+                     2 E a mulher concebeu e deu à luz um  filho; e, vendo
+                       que ele era formoso, escondeu-o três meses.<br>
+                    
+                     3 Não podendo, porém, mais escondê-lo, tomou uma arca
+                       de juncos e a revestiu com barro e betume; e, pondo
+                       nela o menino, a pôs nos juncos à margem do rio.<br>
+                                                       
+                     4 E sua irmã postou-se de longe, para saber o que lhe 
+                       havia de acontecer. <br>
+                     
+                     5 E a filha de Faraó desceu a lavar-se no rio, e as suas
+                       donzelas passeavam, pela margem do rio; e ela viu a arca 
+                       no meio dos juncos, e enviou a sua criada, que a tomou.<br>
+                     
+                    6 E abrindo-a, viu ao menino e eis que o menino chorava;
+                       e moveu-se de compaixão dele, e disse: Dos meninos dos
+                       hebreus é este. <br>
+                     
+                    7 Então disse sua irmã à filha de Faraó: Irei chamar uma
+                       ama das hebréias, que crie este menino para ti?<br>
+                     
+                    8 É a filha de faraó disse-lhe: Vai. E foi-se a moça e 
+                       chamou a mãe do menino<br>
+                    9 Então lhe disse a filha de Faraó: Leva este menino, 
+                       e cria-mo; eu te darei teu salário. E a mulher tomou o
+                       menino, e criou-o<br>
+                    10 E, quando o menino já era grande, ela o trouxe à filha 
+                       de Faraó, a qual o adotou; e chamou-lhe Moisés, e disse:
+                       Porque das águas o tenho tirado.<br>
+                    11 E aconteceu naqueles dias que, sendo Moisés já homem, saiu
+                       a seus irmãos, e atentou para as suas cargas; e viu que um 
+                       egípcio feria a um hebreu, homem de seus irmãos.<br>
+                    12 Olhou para um lado e para outro, e vendo que não havia ninguém 
+                       ali, matou o egipcio e escondeu-o na areia.<br>
+                    13 Tornou a sair no dia seguinte, e eis que dois hebreus contendiam;
+                       e perguntou ao que fazia a injustiça: Por que feres a teu próximo? <br>
+                    14 Respondeu ele: Quem te constituiu a ti príncipe e juiz sobre nós? 
+                       Pensas tu matar-me, como mataste o egípcio? Temeu, pois, Moisés e 
+                       disse: Certamente o negócio já foi descoberto.<br>   
+                    15 	E quando Faraó soube disso, procurou matar a Moisés. Este, porém,
+                       fugiu da presença de Faraó, e foi habitar na terra de Midiã; e 
+                       sentou-se junto a um poço. <br>  
+                    16	O sacerdote de Midiã tinha sete filhas, as quais vieram tirar água,
+                       e encheram os tanques para dar de beber ao rebanho de seu pai.<br>   
+                    17	Então vieram os pastores, e as expulsaram dali; Moisés, porém,
+                       levantou-se e as defendeu, e deu de beber ao rebanho delas.<br>   
+                    18 Quando elas voltaram a Reuel, seu pai, este lhes perguntou: como é 
+                       que hoje voltastes tão cedo?  <br> 
+                    19 Responderam elas: um egípcio nos livrou da mão dos pastores; e ainda
+                       tirou água para nós e deu de beber ao rebanho.<br>   
+                    20 E ele perguntou a suas filhas: Onde está ele; por que deixastes lá 
+                       o homem? chamai-o para que coma pão.<br>
+                    21 Então Moisés concordou em morar com aquele homem, o qual lhe deu sua
+                       filha Zípora. <br>  
+                    22 E ela deu à luz um filho, a quem ele chamou Gérson, porque disse:
+                       Peregrino sou em terra estrangeira. <br>  
+                    23 No decorrer de muitos dias, morreu o rei do Egito; e os filhos de
+                       Israel gemiam debaixo da servidão; pelo que clamaram, e subiu a Deus o
+                       seu clamor por causa dessa servidão.<br>   
+                    24 Então Deus, ouvindo-lhes os gemidos, lembrou-se do seu pacto com Abraão,
+                       com Isaque e com Jacó.<br>   
+                    25 E atentou Deus para os filhos de Israel; e Deus os conheceu.
+                     
+                     
+                     
+
+               </font>
+
+                </div>
+                <div title="Slide" id="transition1" class="panel splashscreen"  style="padding-left:0px">
+                    <div style="text-align:center;width:100%;color:white;font-size:40px">App Framework Slide Transition</div>
+                </div>
+                <div title="Slide Up" id="transition2" class="panel splashscreen"  style="padding-left:0px">
+                     <div style="text-align:center;width:100%;color:white;font-size:40px">App Framework Slide Up Transition</div>
+                </div>
+                <div title="Slide Down" id="transition3" class="panel splashscreen"  style="padding-left:0px">
+                     <div style="text-align:center;width:100%;color:white;font-size:40px">App Framework Slide Down Transition</div>
+                </div>
+                <div title="Pop" id="transition4" class="panel splashscreen"  style="padding-left:0px">
+                    <div style="text-align:center;width:100%;color:white;font-size:40px">App Framework Pop Transition</div>
+                </div>
+                <div title="Flip" id="transition5" class="panel splashscreen"  style="padding-left:0px">
+                    <div style="text-align:center;width:100%;color:white;font-size:40px">App Framework Flip Transition</div>
+                </div>
+                <div title="Fade" id="transition6" class="panel splashscreen"  style="padding-left:0px">
+                    <div style="text-align:center;width:100%;color:white;font-size:40px">App Framework Fade Transition</div>
+                </div>
+
+            <div id="afforms" title="Form Styles" class="panel" data-include="partials/forms.html"></div>
+
+        </div>
+        <footer>
+            <a href="#main" class="icon home" data-transition="slide">Inicio</a>
+
+            <a href="#plugins" class="icon html5" data-transition="slide">Temas</a>
+            <a href="#voice" class="icon mic" data-transition="up-reveal">Voz</a>
+        </footer>
+        <nav id="left"  style="z-index:5" data-include="partials/leftnav.html">
+
+        </nav>
+    
+
+
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
